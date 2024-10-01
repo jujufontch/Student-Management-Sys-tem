@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 FROM openjdk:21-jdk-slim
 
 # Copy the JAR file from the build stage
-COPY --from=build /root/target/sms-0.0.1-SNAPSHOT.jar sms.jar
+COPY --from=build /target/sms-0.0.1-SNAPSHOT.jar sms.jar
 
 # Expose the application port
 EXPOSE 9080
