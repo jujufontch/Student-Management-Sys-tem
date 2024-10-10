@@ -15,8 +15,8 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre-alpine
 
 # Copy the JAR file from the build stage
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar sms.jar
-#COPY --from=build target/*.jar sms.jar
+#COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar sms.jar
+COPY --from=build target/*.jar sms.jar
 
 # Expose the application port
 EXPOSE 9080
